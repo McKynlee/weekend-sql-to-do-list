@@ -12,6 +12,10 @@ app.use(express.static('server/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Incorporate routes:
+let taskRouter = require('./routes/task_router');
+app.use('/tasks', taskRouter);
+
 // Start your server app!
 app.listen(port, function () {
   console.log("I'm listening....", port);

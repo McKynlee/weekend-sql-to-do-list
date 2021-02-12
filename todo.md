@@ -1,6 +1,6 @@
 # Client
 
--[] HTML input
+-[x] HTML input
 -[] ^ on submit goes to DOM
 -[] POST new task to Server as well as whether task is complete or not
 -[] Each task has Complete or Delete buttons
