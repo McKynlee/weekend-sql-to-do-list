@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // connect router to db with pg:
-let pool = require('./pool');
+let pool = require('../modules/pool');
 
 let taskArray = [
   {
@@ -32,3 +32,5 @@ router.post('/', (req, res) => {
   // Create variable to buffer for SQL injections:
   let taskList = [req.body.todo, req.body.completed];
 });
+
+module.exports = router;
