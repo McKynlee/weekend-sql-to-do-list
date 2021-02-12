@@ -6,7 +6,7 @@ function onReady() {
   console.log('JQ running!');
 
   // Get existing tasks to display on DOM:
-  renderTasks();
+  getTasksFromDB();
 
   // Set up event listeners:
   $(document).on('submit', '#task-form', handleSubmit);
@@ -31,10 +31,39 @@ function handleSubmit(event) {
   saveTask(newTask);
 }
 
+function getTasksFromDB() {
+  // GET the tasks saved in db:
+  $.ajax({
+    method: 'GET',
+    url: '/tasks',
+  })
+    .then(function (response) {
+      console.log('GET response:', response);
+      renderTasks(response);
+    })
+    .catch(function (error) {
+      console.log('GET error:', error);
+    });
+}
+
 function renderTasks(array) {
   console.log('in renderTasks');
-
-  for (let task of taskArray) {
+  // Loop through tasks info from db and append to DOM:
+  for (let task of array) {
+    $('#to-do-list').empty();
+    $('#to-do-list').append(`
+        <tr>
+          <td>${task.todo}</td>
+          <td>${task.completed}</td>
+          <td></td>
+          <td>
+            <button class ="complete-check" data-id="${task.id}">Completed</button>
+          </td>
+          <td>
+            <button class ="delete-task" data-id="${task.id}" >DELETE</button>
+          </td>
+        </tr>
+        `);
   }
 }
 
@@ -52,5 +81,6 @@ function saveTask(newToDo) {
     })
     .catch(function (error) {
       console.log("ERROR, didn't POST new task:", error);
+      alert('Error posting your task');
     });
 }
