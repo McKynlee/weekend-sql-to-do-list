@@ -10,6 +10,7 @@ function onReady() {
 
   // Set up event listeners:
   $(document).on('submit', '#task-form', handleSubmit);
+  $(document).on('click', '.complete-check', updateTask);
 }
 
 function handleSubmit(event) {
@@ -58,10 +59,14 @@ function renderTasks(array) {
     // create local variable to represent css
     // change when task complete:
     let completedTask;
+    let completeButtonText = 'Mark Complete';
+    let ifMarkedComplete;
 
     // Write conditional to determine how to manipulate completedTask:
     if (task.completed === true) {
       completedTask = 'taskCompleteClass';
+      completeButtonText = 'Mark Incomplete';
+      ifMarkedComplete = 'mark-incomplete';
     }
 
     $('#to-do-list').append(`
@@ -69,7 +74,10 @@ function renderTasks(array) {
           <td>${task.todo}</td>
           <td>${task.completed}</td>
           <td>
-            <button class ="complete-check button" data-id="${task.id}">Completed</button>
+            <button class ="${ifMarkedComplete} complete-check button" 
+            data-id="${task.id}" data-status="${task.completed}">
+            ${completeButtonText}
+            </button>
           </td>
           <td>
             <button class ="delete-task button" data-id="${task.id}" >DELETE</button>
@@ -95,5 +103,32 @@ function saveTask(newToDo) {
     .catch(function (error) {
       console.log("ERROR, didn't POST new task:", error);
       alert('Error posting your task');
+    });
+}
+
+function updateTask() {
+  console.log('in updateTask');
+
+  // Target the specific task clicked on:
+  let thisTaskId = $(this).data('id');
+
+  // Target the element info you want to update:
+  let thisTaskStatus = $(this).data('status');
+
+  // Communicate with server to make update:
+  $.ajax({
+    method: 'PUT',
+    url: `/tasks/${thisTaskId}`,
+    data: {
+      thisTaskStatus,
+    },
+  })
+    .then((response) => {
+      console.log('Successfully completed task!');
+      getTasksFromDB();
+    })
+    .catch((error) => {
+      console.log('ERROR in updating:', error);
+      alert('Error with updating task');
     });
 }

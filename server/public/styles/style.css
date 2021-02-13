@@ -30,6 +30,11 @@ td {
   box-shadow: 2px 2px 1px #006d77;
 }
 
+.mark-incomplete {
+  background-color: #e29578;
+  box-shadow: 2px 2px 1px black;
+}
+
 .complete-check:hover {
   background-color: #006d77;
 }
