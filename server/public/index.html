@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./scripts/jquery.js"></script>
+    <script src="./scripts/client.js"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="shortcut icon" type="image/jpg" href="./images/favicon.jpg" />
+  </head>
+  <body>
+    <h1>Your To-Do List:</h1>
+    <form id="task-form">
+      <input type="text" id="input-task" />
+      <button id="add-task-button">Add To List</button>
+    </form>
+    <table id="tableWrapper">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th id="delete-column">Completion Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="to-do-list">
+        <!--JQ will generate input data here-->
+      </tbody>
+    </table>
+  </body>
+</html>

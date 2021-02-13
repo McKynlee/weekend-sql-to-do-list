@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  background-color: #ffddd2;
+  text-align: center;
+}
+
+table {
+  margin: 30px auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid #e29578;
+  border-collapse: collapse;
+  padding: 1rem;
+}
+
+.taskCompleteClass {
+  background-color: #006d77;
+  color: #edf6f9;
+}
+
+.button {
+  border-radius: 1rem;
+}
+
+.complete-check {
+  background-color: #83c5be;
+  box-shadow: 2px 2px 1px #006d77;
+}
+
+.mark-incomplete {
+  background-color: #e29578;
+  box-shadow: 2px 2px 1px black;
+}
+
+.complete-check:hover {
+  background-color: #006d77;
+}
+
+.delete-task {
+  background-color: ##e29578;
+  box-shadow: 2px 2px 1px black;
+}
+
+.delete-task:hover {
+  background-color: red;
+}
