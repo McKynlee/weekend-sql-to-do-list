@@ -83,4 +83,24 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// Communicate with DB the info client shared about which
+// task needs to be deleted:
+router.delete('/:id', (req, res) => {
+  let taskToDeleteId = req.params.id;
+  let sqlText = `DELETE FROM "tasks" WHERE "id"=$1;`;
+
+  console.log('taskToDeleteId:', taskToDeleteId);
+
+  pool
+    .query(sqlText, [taskToDeleteId])
+    .then((response) => {
+      console.log('Task deleted');
+      res.sendStatus(200);
+    })
+    .catch((error) => {
+      console.log('Error making db query', sqlText, error);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;

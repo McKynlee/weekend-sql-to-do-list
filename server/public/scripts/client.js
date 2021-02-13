@@ -143,4 +143,18 @@ function deleteTask() {
   //   'taskToDelete:',
   //   taskToDelete
   // );
+
+  // Send selected task by id to server for deletion:
+  $.ajax({
+    method: 'DELETE',
+    url: `/tasks/${taskToDelete}`,
+  })
+    .then((response) => {
+      // When deletion in db complete, refresh DOM:
+      getTasksFromDB();
+    })
+    .catch((error) => {
+      console.log('Error deleting book:', error);
+      alert('Error deleting book');
+    });
 }
