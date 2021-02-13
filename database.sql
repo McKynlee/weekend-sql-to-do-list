@@ -7,11 +7,12 @@ CREATE TABLE "tasks" (
 INSERT INTO "tasks"
 	("todo", "completed")
 VALUES
+	('Create this to-do list', TRUE)
 	('Clean the bathroom', FALSE),
 	('Sweep the floor', FALSE),
-	('Do HW', TRUE),
+	('Do HW', FALSE),
 	('Make dinner', FALSE),
-	('Go for jog', TRUE);
+	('Go for jog', FALSE);
 	
 	
 SELECT * FROM "tasks";

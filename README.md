@@ -2,13 +2,37 @@
 
 ## Description
 
-\*Duration: Approximately 10 hours
+_Duration: Approximately 10 hours_
 
-This application serves as a To-Do list, that allows the user to: 1. add tasks 1. mark tasks as completed (or if they were marked completed by actually need to be completed still/again, they can be returned to the task list) 1. delete tasks from the list.
+This application serves as a To-Do list that allows the user to:
+
+- add tasks
+- mark tasks as completed (or if they were marked completed by actually need to be completed still/again, they can be returned to the task list)
+- delete tasks from the list.
 
 Here is a view of a task list that has 6 items already added to it, and 'Exercise' written in the textbox so that it will be added once the user clicks the "Add To List" button:
 
 ![Initial Task List](./server/public/images/taskListStart.png)
 
 Here is the view of the task list with 'Exercise' added to the list, and 'Clean the bathroom' has been marked complete by clicking the 'Check off task!' button next to it. At this point, the completed task is displayed with a green background, and can either be returned to its incomplete status by clicking the 'Re-add to task list' button, or be removed from the task list altogether by clicking the 'DELETE' button next to it:
+
 ![Initial Task List](./server/public/images/taskListComplete.png)
+
+## Installation
+
+1. Open this repository in your favorite code editor (VS Code was used for creating this app).
+1. Install node and express (don't worry, I've already got a nifty .gitignore file to avoid committing and pushing the massive node_modules!) - simply run "npm install" in your terminal.
+1. Create a database on your local server (Postico was used during creation).
+   1. IMPORTANT: your database needs to be named weekend_to_do_app in order to communicate with the current code.
+   1. Copy all of the text in the attached database.sql module and insert it into the SQL Query box of your weekend_to_do_app database.
+   1. You can either execute this SQL statement as an entire block, or do them one by one from the top down (important that these are done sequentially in this case).
+1. Type npm start into your terminal to start the server.
+1. Run localhost:5000/ in your browser.
+
+## Usage
+
+## Built with:
+
+## Acknowledgement
+
+Thanks to [Prime Digital Academy](https://www.primeacademy.io/) who equipped and helped me to make this application a reality.
