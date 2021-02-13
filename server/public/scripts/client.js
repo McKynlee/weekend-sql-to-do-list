@@ -11,6 +11,7 @@ function onReady() {
   // Set up event listeners:
   $(document).on('submit', '#task-form', handleSubmit);
   $(document).on('click', '.complete-check', updateTask);
+  $(document).on('click', '.delete-task', deleteTask);
 }
 
 function handleSubmit(event) {
@@ -59,20 +60,19 @@ function renderTasks(array) {
     // create local variable to represent css
     // change when task complete:
     let completedTask;
-    let completeButtonText = 'Mark Complete';
+    let completeButtonText = 'Check off task!';
     let ifMarkedComplete;
 
     // Write conditional to determine how to manipulate completedTask:
     if (task.completed === true) {
       completedTask = 'taskCompleteClass';
-      completeButtonText = 'Mark Incomplete';
+      completeButtonText = 'Re-Add to task list';
       ifMarkedComplete = 'mark-incomplete';
     }
 
     $('#to-do-list').append(`
         <tr class=${completedTask}>
           <td>${task.todo}</td>
-          <td>${task.completed}</td>
           <td>
             <button class ="${ifMarkedComplete} complete-check button" 
             data-id="${task.id}" data-status="${task.completed}">
@@ -131,4 +131,16 @@ function updateTask() {
       console.log('ERROR in updating:', error);
       alert('Error with updating task');
     });
+}
+
+function deleteTask() {
+  // Target specific task clicked for deletion:
+  let taskToDelete = $(this).data('id');
+
+  // console.log(
+  //   'in deleteTask, clicked this:',
+  //   this,
+  //   'taskToDelete:',
+  //   taskToDelete
+  // );
 }

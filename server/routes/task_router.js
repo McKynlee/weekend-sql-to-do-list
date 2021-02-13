@@ -34,7 +34,10 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
   // query the db:
   pool
-    .query(`SELECT * FROM "tasks"`)
+    .query(
+      `SELECT * FROM "tasks"
+            ORDER BY "id" ASC`
+    )
     .then(function (dbRes) {
       console.log('dbRes:', dbRes.rows);
       res.send(dbRes.rows);
