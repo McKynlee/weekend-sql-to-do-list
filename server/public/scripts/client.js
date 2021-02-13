@@ -17,6 +17,7 @@ function handleSubmit(event) {
   event.preventDefault();
   console.log('in handleSubmit');
 
+  // create object to hold input values:
   let newTask = {
     todo: $('#input-task').val(),
     completed: false,
@@ -47,10 +48,13 @@ function getTasksFromDB() {
 }
 
 function renderTasks(array) {
-  console.log('in renderTasks');
+  console.log('in renderTasks', array);
+
+  // Avoid appending same db data multiple times:
+  $('#to-do-list').empty();
+
   // Loop through tasks info from db and append to DOM:
   for (let task of array) {
-    $('#to-do-list').empty();
     $('#to-do-list').append(`
         <tr>
           <td>${task.todo}</td>
@@ -78,6 +82,7 @@ function saveTask(newToDo) {
   })
     .then(function (response) {
       console.log('POST response:', response);
+      getTasksFromDB();
     })
     .catch(function (error) {
       console.log("ERROR, didn't POST new task:", error);

@@ -4,30 +4,6 @@ const router = express.Router();
 // connect router to db with pg:
 let pool = require('../modules/pool');
 
-// Store this information in the db:
-// let taskArray = [
-//   {
-//     todo: 'Clean the bathroom',
-//     completed: false,
-//   },
-//   {
-//     todo: 'Sweep the floor',
-//     completed: false,
-//   },
-//   {
-//     todo: 'Do HW',
-//     completed: false,
-//   },
-//   {
-//     todo: 'Go for a jog',
-//     completed: false,
-//   },
-//   {
-//     todo: 'Make dinner',
-//     completed: false,
-//   },
-// ];
-
 router.post('/', (req, res) => {
   console.log('req.body', req.body);
   // Create variable to buffer for SQL injections:
@@ -53,6 +29,18 @@ router.post('/', (req, res) => {
     });
 });
 
-router.get('/', (req, res) => {});
+router.get('/', (req, res) => {
+  // query the db:
+  pool
+    .query(`SELECT * FROM "tasks"`)
+    .then(function (dbRes) {
+      console.log('dbRes:', dbRes.rows);
+      res.send(dbRes.rows);
+    })
+    .catch(function (error) {
+      console.log('GET error:', error);
+      res.sendStatus(500);
+    });
+});
 
 module.exports = router;
