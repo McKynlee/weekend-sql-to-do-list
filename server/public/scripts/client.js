@@ -55,16 +55,24 @@ function renderTasks(array) {
 
   // Loop through tasks info from db and append to DOM:
   for (let task of array) {
+    // create local variable to represent css
+    // change when task complete:
+    let completedTask;
+
+    // Write conditional to determine how to manipulate completedTask:
+    if (task.completed === true) {
+      completedTask = 'taskCompleteClass';
+    }
+
     $('#to-do-list').append(`
-        <tr>
+        <tr class=${completedTask}>
           <td>${task.todo}</td>
           <td>${task.completed}</td>
-          <td></td>
           <td>
-            <button class ="complete-check" data-id="${task.id}">Completed</button>
+            <button class ="complete-check button" data-id="${task.id}">Completed</button>
           </td>
           <td>
-            <button class ="delete-task" data-id="${task.id}" >DELETE</button>
+            <button class ="delete-task button" data-id="${task.id}" >DELETE</button>
           </td>
         </tr>
         `);

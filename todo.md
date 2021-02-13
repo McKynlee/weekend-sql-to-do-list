@@ -4,13 +4,14 @@
 - [x] ^ on submit goes to DOM
 - [x] POST new task to Server as well as whether task is complete or not
 - [x] Each task has Complete or Delete buttons
-- [] Selecting Complete changes that task visually AND complete option should be checked off
+- [] Selecting Complete changes that task visually AND complete option should be checked off: PUT
 - [] Delete removes task from DOM
-- [] Stylez
+- [x] Stylez
 
 # Server
 
 - [x] Server sends new task + completed/not to store in db table
+- [] Selecting Complete changes that task visually AND complete option should be checked off: UPDATE "tasks" SET
 - [] Delete removes task from db
 
 # Database
