@@ -33,6 +33,17 @@ Here is the view of the task list with 'Exercise' added to the list, and 'Clean 
 
 ## Built with:
 
+- HTML
+- CSS
+- JavaScript
+- jQuery (and AJAX/XHR) [JS library]
+- Node.js [Back-end JS run-time environment]
+- Express [Back-end JS framework for Node.js]
+- JSON [allow for transmission of data objects between Client and Server using human-readable text]
+- PostgreSQL [relational database management]
+- SQL [executing SQL statements to manage database]
+- Postico [database app for executing SQL statements and running postgreSQL database tests]
+
 ## Acknowledgement
 
 Thanks to [Prime Digital Academy](https://www.primeacademy.io/) who equipped and helped me to make this application a reality.
