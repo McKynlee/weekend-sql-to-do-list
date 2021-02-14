@@ -1,20 +1,21 @@
-# Client
+# STRETCH
 
-- [x] HTML input
-- [x] ^ on submit goes to DOM
-- [x] POST new task to Server as well as whether task is complete or not
-- [x] Each task has Complete or Delete buttons
-- [x] Selecting Complete changes that task visually AND complete option should be checked off: PUT
-- [x] Delete removes task from DOM
-- [x] Stylez
+1. feature-styling-bootstrap branch:
 
-# Server
+- [] Install bootstrap
+- [] Buttons: 'Add to List' and 'Check off task!' buttons both green, Delete button red.
+- [] Inputs: style text inputs in bootstrap way.
+- [] Responsive: Make app responsive to different screen sizes.
+- [] (Check out layout section)
 
-- [x] Server sends new task + completed/not to store in db table
-- [x] Selecting Complete changes that task visually AND complete option should be checked off: UPDATE "tasks" SET
-- [x] Delete removes task from db
+1. feature-confirm-delete branch:
 
-# Database
+- [] Create 'are you sure: yes/no' option when deleting task. (check out Bootstrap Modal or Sweet Alerts - use CDN option).
 
-- [x] Create new db weekend-to-do-app
-- [x] Create table within db
+1. feature-ordering-task-query branch:
+
+   - [] Research Query Params to have request reverse the order of returned to-dos.
+
+1. feature-time-completed branch:
+   - [] Add ability to record time when a task was completed.
+   - [] Show completed date on the frontend in a pretty format.

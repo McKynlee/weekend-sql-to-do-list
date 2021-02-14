@@ -12,6 +12,11 @@ app.use(express.static('server/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//Bring in Bootstrap:
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
+// app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
+
 // Incorporate routes:
 let taskRouter = require('./routes/task_router');
 app.use('/tasks', taskRouter);
