@@ -10,7 +10,7 @@ function onReady() {
 
   // Set up event listeners:
   $(document).on('submit', '#task-form', handleSubmit);
-  $(document).on('click', '.complete-check', updateTask);
+  $(document).on('click', '.check-off', updateTask);
   $(document).on('click', '.delete-task', deleteTask);
 }
 
@@ -67,15 +67,14 @@ function renderTasks(array) {
     if (task.completed === true) {
       completedTask = 'bg-success';
       completeButtonText = 'Re-Add to task list';
-      ifMarkedComplete = 'bg-warning';
-    } else {
+      ifMarkedComplete = 'bg-warning text-dark';
     }
 
     $('#to-do-list').append(`
         <tr class=${completedTask}>
           <td>${task.todo}</td>
           <td>
-            <button class ="${ifMarkedComplete} bg-success text-light button" 
+            <button class="${ifMarkedComplete} bg-success text-light check-off button" 
             data-id="${task.id}" data-status="${task.completed}">
             ${completeButtonText}
             </button>
