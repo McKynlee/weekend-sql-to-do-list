@@ -12,27 +12,16 @@ table {
 table,
 th,
 td {
-  border: 1px solid #e29578;
+  border: 1px solid white;
   border-collapse: collapse;
   padding: 1rem;
-}
-
-.taskCompleteClass {
-  background-color: #006d77;
-  color: #edf6f9;
 }
 
 .button {
   border-radius: 1rem;
 }
 
-.complete-check {
-  background-color: #83c5be;
-  box-shadow: 2px 2px 1px #006d77;
-}
-
 .mark-incomplete {
-  background-color: #e29578;
   box-shadow: 2px 2px 1px black;
 }
 
@@ -41,7 +30,6 @@ td {
 }
 
 .delete-task {
-  background-color: ##e29578;
   box-shadow: 2px 2px 1px black;
 }
 

@@ -2,8 +2,8 @@
 
 1. feature-styling-bootstrap branch:
 
-- [] Install bootstrap
-- [] Buttons: 'Add to List' and 'Check off task!' buttons both green, Delete button red.
+- [x] Install bootstrap
+- [x] Buttons: 'Add to List' and 'Check off task!' buttons both green, Delete button red.
 - [] Inputs: style text inputs in bootstrap way.
 - [] Responsive: Make app responsive to different screen sizes.
 - [] (Check out layout section)

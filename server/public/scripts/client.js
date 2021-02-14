@@ -59,28 +59,29 @@ function renderTasks(array) {
   for (let task of array) {
     // create local variable to represent css
     // change when task complete:
-    let completedTask;
+    let completedTask = 'bg-primary';
     let completeButtonText = 'Check off task!';
     let ifMarkedComplete;
 
     // Write conditional to determine how to manipulate completedTask:
     if (task.completed === true) {
-      completedTask = 'taskCompleteClass';
+      completedTask = 'bg-success';
       completeButtonText = 'Re-Add to task list';
-      ifMarkedComplete = 'mark-incomplete';
+      ifMarkedComplete = 'bg-warning';
+    } else {
     }
 
     $('#to-do-list').append(`
         <tr class=${completedTask}>
           <td>${task.todo}</td>
           <td>
-            <button class ="${ifMarkedComplete} complete-check button" 
+            <button class ="${ifMarkedComplete} bg-success text-light button" 
             data-id="${task.id}" data-status="${task.completed}">
             ${completeButtonText}
             </button>
           </td>
           <td>
-            <button class ="delete-task button" data-id="${task.id}" >DELETE</button>
+            <button class ="bg-danger text-light delete-task button" data-id="${task.id}" >DELETE</button>
           </td>
         </tr>
         `);
