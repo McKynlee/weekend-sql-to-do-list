@@ -31,6 +31,14 @@ Here is the view of the task list with 'Exercise' added to the list, and 'Clean 
 
 ## Usage
 
+1. Write a task you would like to add to the to-do list into the text box.
+1. Click "Add to List". Repeat these first two steps for each new task you would like to add.
+1. Once a task has been completed, click the green "Check off task!" button in that task's row on the table. This will turn the entire row green, and the "Check off task!" button will turn into an orange "Re-Add to task list" button.
+1. If you would like to unmark a task that has been checked as completed, click the "Re-Add to task list" button that appears next to it after you have clicked "Check off task!".
+1. If you would like to completely remove a task from the list (and the database), click the "DELETE" button next to that task.
+
+Happy 'Getting-things-done'!
+
 ## Built with:
 
 - HTML
