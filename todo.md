@@ -4,8 +4,8 @@
 
 - [x] Install bootstrap
 - [x] Buttons: 'Add to List' and 'Check off task!' buttons both green, Delete button red.
-- [] Inputs: style text inputs in bootstrap way.
-- [] Responsive: Make app responsive to different screen sizes.
+- [x] Inputs: style text inputs in bootstrap way.
+- [x - kinda] Responsive: Make app responsive to different screen sizes.
 - [] (Check out layout section)
 
 1. feature-confirm-delete branch:
