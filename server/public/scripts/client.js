@@ -11,7 +11,7 @@ function onReady() {
   // Set up event listeners:
   $(document).on('submit', '#task-form', handleSubmit);
   $(document).on('click', '.check-off', updateTask);
-  $(document).on('click', '.delete-task', deleteTask);
+  $(document).on('click', '.delete-task', deleteSweetAlert);
 }
 
 function handleSubmit(event) {
@@ -80,7 +80,7 @@ function renderTasks(array) {
             </button>
           </td>
           <td>
-            <button class ="bg-danger text-light delete-task button" data-id="${task.id}" >DELETE</button>
+            <button class ="bg-danger btn-danger text-light delete-task button" data-id="${task.id}" >DELETE</button>
           </td>
         </tr>
         `);
@@ -133,10 +133,30 @@ function updateTask() {
     });
 }
 
-function deleteTask() {
+function deleteSweetAlert() {
   // Target specific task clicked for deletion:
   let taskToDelete = $(this).data('id');
 
+  swal({
+    title: 'Are you sure?',
+    text: 'You will not be able to recover this task!',
+    type: 'warning',
+    buttons: true,
+    dangerMode: true,
+    closeOnConfirm: false,
+  }).then((willDelete) => {
+    if (willDelete) {
+      deleteTask(taskToDelete);
+      swal('Poof! Your task has been deleted!', {
+        icon: 'success',
+      });
+    } else {
+      swal('Your task is saved');
+    }
+  });
+}
+
+function deleteTask(taskToDelete) {
   // console.log(
   //   'in deleteTask, clicked this:',
   //   this,
